@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+    oragent:
+        image: "gcr.io/orijtech/oragent:v0.0.2"
+        ports:
+            - 55678:55678
+            - 55679:55679
+            - 8844:8844
+        volumes:
+            - ./oragent:/etc/oragent/
+        command:
+            - '--config=/etc/oragent/config.yml'
+        links:
+            - zipkin
+
+    prometheus:
+        image: "prom/prometheus:v2.12.0"
+        volumes:
+            - ./prometheus:/etc/prometheus/
+            - prometheus_data:/prometheus
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--log.level=debug'
+            - '--storage.tsdb.path=/etc/prometheus'
+            - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+            - '--web.console.templates=/usr/share/prometheus/consoles'
+        ports:
+            - 9445:9090
+        links:
+            - oragent
+
+    zipkin:
+        image: "openzipkin/zipkin"
+        ports:
+            - 9444:9411
+
+volumes:
+    prometheus_data: {}

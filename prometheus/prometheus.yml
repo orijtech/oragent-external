@@ -1,0 +1,5 @@
+scrape_configs:
+    - job_name: "ocagent"
+      scrape_interval: 3s
+      static_configs:
+          - targets: ['oragent_oragent_1:8844']

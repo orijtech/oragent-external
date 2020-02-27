@@ -1,0 +1,17 @@
+exporters:
+    zipkin:
+        service_name: "oragent"
+        endpoint: "http://oragent_zipkin_1:9411/api/v2/spans"
+        local_endpoint: "localhost:5544"
+        upload_period: 5s
+
+    prometheus:
+        namespace: "oragent"
+        address: ":8844"
+
+receivers:
+    opencensus:
+        endpoint: "localhost:55678"
+
+zpages:
+    port: 55679
