@@ -1,3 +1,7 @@
+# Please feel free to modify this file as per
+# * Receivers: https://opencensus.io/agent/receivers/
+# * Exporters: https://opencensus.io/agent/exporters/
+
 exporters:
     zipkin:
         service_name: "oragent"
