@@ -33,7 +33,7 @@ We ship a couple of services:
 It ships with an [OpenCensus Agent Protocol compatible daemon](https://opencensus.io/agent) available on port 55678 and [zPages](https://opencensus.io/zpages) available at port 55679. This agent will receive traces and metrics.
 
 ### Metrics
-To examine metrics, by default [Prometheus](https://prometheus.io/) is availabe on port 9445, so visit http://localhost:9445/
+To examine metrics, by default [Prometheus](https://prometheus.io/) is available on port 9445, so visit http://localhost:9445/
 
 ### Traces
 To examine traces, by default [Zipkin](https://zipkin.io/) is available on port 9411, so visit http://localhost:9411/
