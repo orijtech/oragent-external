@@ -18,7 +18,7 @@ Requirement|Comment
 Docker and docker-compose|If you don't have it, please visit https://www.docker.com/get-started
 Port 55678|To receive traces and metrics in the [OpenCensus Agent Protocol](https://opencensus.io/agent/)
 Port 55679|To self introspect the agent
-Port 9411|By default, ships with Zipkin for examining traces
+Port 9444|By default, ships with Zipkin for examining traces
 Port 9445|By default, ships with Prometheus for examining metrics
 
 ## Running it
