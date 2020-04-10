@@ -17,5 +17,8 @@ receivers:
     opencensus:
         endpoint: "localhost:55678"
 
+    uds:
+        disable_tracing: false
+
 zpages:
     port: 55679
