@@ -11,6 +11,8 @@ services:
             - ./oragent:/etc/oragent/
         command:
             - '--config=/etc/oragent/config.yml'
+        depends_on:
+            - database
         links:
             - zipkin
 
@@ -35,5 +37,17 @@ services:
         ports:
             - 9444:9411
 
+    database:
+        image: "postgres"
+        env_file:
+            - database.env
+        volumes:
+            - ./postgres_setup:/docker-entrypoint-initdb.d/
+            - postgres_data:/var/lib/postgresql/data/
+        ports:
+            - 5432:5432
+            
+
 volumes:
     prometheus_data: {}
+    postgres_data: {}

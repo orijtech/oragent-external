@@ -13,6 +13,9 @@ exporters:
         namespace: "oragent"
         address: ":8844"
 
+    postgresql:
+        connection: "user=oragent password=oragent dbname=postgres sslmode=disable host=oragent_database_1"
+
 receivers:
     opencensus:
         endpoint: "localhost:55678"
