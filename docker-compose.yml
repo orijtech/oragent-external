@@ -2,11 +2,12 @@ version: '3.7'
 
 services:
     oragent:
-        image: "gcr.io/orijtech/oragent:v0.1.0"
+        image: "gcr.io/orijtech/oragent:v0.1.4"
         ports:
             - 55678:55678
             - 55679:55679
             - 8844:8844
+            - 8877:8877
         volumes:
             - ./oragent:/etc/oragent/
         command:
