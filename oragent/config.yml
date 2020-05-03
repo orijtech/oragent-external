@@ -19,5 +19,6 @@ exporters:
 receivers:
     opencensus:
         endpoint: "localhost:55678"
-
+        cors_allowed_origins:  # For WebJS to work.
+            - http://localhost:*
 ui:
